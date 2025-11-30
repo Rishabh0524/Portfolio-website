@@ -1,6 +1,12 @@
-import { Metadata } from "next";
-import profileImg from "../../public/profile.jpg";
+import { Metadata, Viewport } from "next";
 import HomeWrapper from "./HomeWrapper";
+
+// 1. Viewport aur ThemeColor ko alag export kiya (Warning Fix)
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  themeColor: "#000000",
+};
 
 export const metadata: Metadata = {
   title: "Rishabh Malviya - MERN Stack Developer Portfolio",
@@ -29,10 +35,10 @@ export const metadata: Metadata = {
     description:
       "Portfolio of Rishabh Malviya, a MERN Stack and Next.js Developer specializing in React, Node.js, TypeScript, and modern web development.",
   },
-  viewport: "width=device-width, initial-scale=1.0",
-  themeColor: "#000000",
+  // Note: Viewport aur themeColor yahan se hata kar upar alag export kar diya hai
 };
 
 export default function Home() {
-  return <HomeWrapper profileImg={profileImg} />;
+  // 2. Yahan 'profileImg' variable ki jagah seedha string path diya hai
+  return <HomeWrapper profileImg="/profile.jpg" />;
 }

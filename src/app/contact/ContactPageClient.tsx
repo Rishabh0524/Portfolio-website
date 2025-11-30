@@ -1,6 +1,6 @@
 "use client";
 import { Mail, Phone } from "lucide-react";
-import profileImg from "../../../public/profile.jpg";
+// Import hata diya hai kyunki ab seedha public folder se uthayenge
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
@@ -109,12 +109,14 @@ const ContactPageClient = () => {
             transition={{ duration: 0.8 }}
             className={`relative flex items-center justify-center w-60 md:w-72 lg:w-[25rem] h-60 md:h-72 lg:h-[25rem] mt-10 lg:mt-0 rounded-full border-4 ${
               darkMode ? "border-purple-400" : "border-purple-300"
-            } hover:border-purple-500 transition-all duration-300`}
+            } hover:border-purple-500 transition-all duration-300 overflow-hidden`}
           >
+            {/* FIXED IMAGE COMPONENT */}
             <Image
-              src={profileImg}
+              src="/profile.jpg"
               alt="Profile Image"
-              className="object-cover rounded-full w-full h-full hover:scale-105 transition-transform duration-300"
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-300"
             />
           </motion.div>
         </div>
