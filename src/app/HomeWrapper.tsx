@@ -4,12 +4,11 @@
 
 import { useTheme } from "@/context/ThemeContext";
 import { Download } from "lucide-react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import Experience from "@/components/Experience";
 import Skils from "@/components/Skils";
 import MyStory from "@/components/MyStory";
-import { StaticImageData } from "next/image";
 import AnimatedSection from "@/components/AnimatedSection";
 import TransitionWrapper from "@/components/TransitionWrapper";
 import Magnetic from "@/components/Magnetic";
@@ -67,7 +66,7 @@ const HomeWrapper = ({ profileImg }: HomeWrapperProps) => {
                   </Link>
                   <Magnetic>
                     <a
-                      href="/Rishabh-Malviya-Resume.pdf" // Updated the CV filename
+                      href="/Rishabh-Malviya-Resume.pdf" 
                       download="Rishabh-Malviya-Resume.pdf"
                       className="px-6 py-2 bg-transparent border rounded-lg flex items-center justify-center gap-2 font-bold transition-all duration-300 hover:scale-105"
                     >
@@ -77,16 +76,20 @@ const HomeWrapper = ({ profileImg }: HomeWrapperProps) => {
                   </Magnetic>
                 </div>
               </div>
+              
               {/* Image Section (First on Mobile) */}
               <div
-                className={`relative flex items-center justify-center w-60 md:w-72 lg:w-[25rem] h-60 md:h-72 lg:h-[25rem] mt-10 lg:mt-0 rounded-full border-4 ${
+                className={`relative flex items-center justify-center w-60 md:w-72 lg:w-[25rem] h-60 md:h-72 lg:h-[25rem] mt-10 lg:mt-0 rounded-full border-4 overflow-hidden ${
                   darkMode ? "border-purple-400" : "border-purple-300"
                 }`}
               >
+                {/* FIX: Added 'fill' prop so string path works correctly */}
                 <Image
                   src={profileImg}
                   alt="Profile Image"
-                  className="object-cover rounded-full w-full h-full"
+                  fill
+                  className="object-cover rounded-full"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
             </div>
