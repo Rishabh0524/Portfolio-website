@@ -4,7 +4,7 @@ import { projects, Project } from "@/data/projectData";
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+// import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { SiTypescript, SiNextdotjs, SiTailwindcss, SiReact, SiNodedotjs, SiMongodb, SiExpress, SiRedux, SiFirebase, SiGooglemaps, SiRedis, SiPrisma, SiPostgresql, SiMaterialdesign } from "react-icons/si";
 import { useTheme } from "@/context/ThemeContext";
 
